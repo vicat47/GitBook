@@ -1,3 +1,7 @@
-# My Awesome Book
+# OracleDatabase 12c
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+  
+这是我通过Oracle 12c学习SQL语言的笔记，因为马上要考试，也为了以后方便查询，遂写成GITBOOK的形式去待日后索引。
+
+
+
