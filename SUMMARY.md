@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [导语](README.md)
 * [第一章：查询语句](chapter1.md)
 * 第二章：数据操纵语句
 * 第三章：数据定义语言
