@@ -7,7 +7,11 @@
   - [ ] SELECT
   - [ ] WHERE
   - [ ] ORDER BY
-  - [ ] 
+  - [ ] JOIN
+  - [ ] HAVING
+  - [ ] SINGLE LINE FUNCTION
+  - [ ] MUTILINE FUNCTION
+  - [ ] GROUP BY
 - [ ] chapter2 Data Manipulation Language
   - [x] INSERT
   - [ ] UPDATE
