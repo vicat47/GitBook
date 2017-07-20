@@ -20,3 +20,23 @@
 - 确保数据的一致性
 - 在使更改永久化之前，可以预览数据的更改
 - 按逻辑关系对相关操作进行分组
+![事务控制](https://ws1.sinaimg.cn/large/e50fdd0bly1fhqjkrkapnj20gm09iq2z.jpg)
+### SAVEPOINT 与 ROLLBACK
+- 使用SAVEPOINT语句在当前事务处理中创建一个标记.
+- 使用ROLLBACK TO SAVEPOINT 语句回退到该标记处
+```sql
+UPDATE...
+SAVEPOINT update_done;
+INSERT...
+ROLLBACK TO update_done;
+```
+- 如果之前有同名的存储点，则之后的存储点会**覆盖**之前同名的存储点
+### 隐式的事务处理
+- 在一下情况Oracle会自动提交:
+  - 发出DDL语句
+  - 发出DCL语句
+  - 正常退出SQL Developer 或 SQL PLUS而没有显示的发出COMMIT或者ROLLBACK语句
+- 在SQL Developer 或 SQL Plus 异常终止或系统发生故障的情况下，自动回退。
+> 在SQL * Plus中，可以设置AUTOCOMMIT命令ON或OFF。 如果设置为ON，则每个单独的DML语句都将在执行时立即提交。 无法回滚更改。 如果设置为OFF，则COMMIT语句仍然可以被明确发出。 此外，COMMIT语句是在发出DDL语句或退出SQL * Plus时发出的。 在SQL Developer中跳过SET AUTOCOMMIT ON / OFF命令。 只有启用了Autocommit首选项后，DML才会在SQL Developer的正常退出时执行。 要启用自动提交功能，请执行以下操作：
+> 在工具菜单中，选择首选项。 在首选项对话框中，展开数据库并选择工作表参数。  
+> 在右窗格中，选择“SQL工作表中的自动提交”选项。 单击确定。
